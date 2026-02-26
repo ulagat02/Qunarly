@@ -1,205 +1,250 @@
 # Qunarly — Жобаның толық логикасы
 
-> Ауылдық агротехнологиялық платформа (Қазақстан MVP)
+> **Qunarly — такси қосымшасы емес. Qunarly — ауыл экономикасының қан тамыры.**
 
 ---
 
-## 0. Qunarly деген не?
+## 0. Философия
 
-**Qunarly** – фермерлерге, ауыл тұрғындарына және шағын кәсіп иелеріне арналған біріккен цифрлық платформа.
+**Шаруа → тікелей сатып алушы.**
+**Ауыл → тікелей қала.**
+**Такси → жай көлік емес, логистикалық арна.**
 
-### Миссия
-Ауылды «онлайн экономикаға» кіргізу — делдалсыз, тікелей, цифрлық.
+Qunarly — ауыл мен қаланы біріктіретін цифрлық экожүйе.
 
-### Негізгі бағыттар
+### Неге?
+- Ауылдағы шаруа өнімін сата алмай отыр. Делдал арасы 3-4.
+- Қалада бағасы 3-4 есе өседі.
+- Ауыл таксиі бос қайтады.
+- Техника бос тұрады.
 
-| # | Модуль | Мақсат | Статус |
-|---|--------|--------|--------|
-| 1 | **Ауыл такси** | Ауыл→аудан→қала рейстер, кезек логикасы, орын бақылауы | ✅ Іске асырылды |
-| 2 | **Жармеңке (Маркетплейс)** | Ауыл өнімін тікелей сату (картоп, ет, сүт, астық), ~3% комиссия | ✅ Іске асырылды |
-| 3 | **Тасымал (Логистика)** | Эстафеталық жеткізу хаб арқылы, QR тапсыру | ✅ Іске асырылды |
-| 4 | **Техника жалға беру** | Трактор, комбайн, жүк көлігі, жұмысшы | ⚠️ Негізі бар, кеңейту қажет |
-| 5 | **Қойма қызметтері** | Сақтау, жер қызметтері | ❌ Жоқ |
-| 6 | **Сертификаттау** | Сертификат алу, экспортқа шығу көмегі | ❌ Жоқ |
-| 7 | **Рейтинг/пікір** | Сатушы/орындаушы бағалау жүйесі | ⚠️ Тек көрсету (жазу жоқ) |
-| 8 | **Админ панелі** | Тапсырыс, дау, алаяқтық, SLA басқару | ✅ API іске асырылды |
+### Принциптер
+1. **Шаруаға қиын болмауы керек** — максимум 5 өріс, 1 батырма
+2. **Артық ештеңе болмауы керек** — сертификат, склад, артық форма кейін
+3. **WhatsApp деңгейінде түсінікті** — ауыл адамы 10 секундта меңгеруі тиіс
+4. **Бос қайтпау логикасы** — әр көлік пайда таратады
+5. **Склад қажет емес, курьер штаты қажет емес** — жергілікті такси инфрақұрылымы
 
 ### Тарихи ұқсастық
-Алтын Орда дәуіріндегі **ям** (эстафеталық пошта) жүйесі — ауыл→хаб→қала, жүргізушілер бір-біріне тапсырады. Qunarly бұл логиканы цифрлық форматта жасайды.
+Алтын Орда заманындағы **ям** (эстафеталық пошта) жүйесі: ауыл→хаб→қала, жүргізушілер бір-біріне тапсырады. Qunarly — осы логиканың цифрлық нұсқасы.
+
+### Даму кезеңдері
+
+| Кезең | Не істейміз |
+|-------|------------|
+| **1-кезең** | Маркетплейс + Ауыл такси цифрландыру |
+| **2-кезең** | Эстафеталық логистика + Қалалық тарату |
+| **3-кезең** | Склад + Экспорт + Агроном сервис |
 
 ---
 
-## 0.1 Визия мен іске асырылу GAP анализі
+## 1. Маркетплейс — негізгі өзек
 
-### Техника жалға беру (Field Jobs) — кеңейту қажет
+> Ең маңыздысы — **шаруаға қиын болмауы**.
 
-| Не қажет | Қазіргі жағдай |
-|----------|---------------|
-| Техника категориялары (трактор, комбайн, жүк көлігі) | ❌ ServiceType тек name + baseRate |
-| Жұмысшы жалдау (workerCount) | ❌ Тек техника, адам жоқ |
-| Баға модельдері (сағатына/күніне/гектарына) | ⚠️ Тек гектарына (`baseRate * areaHa`) |
-| Техника қолжетімділігі/күнтізбе | ❌ Жоқ |
-| Орындаушы рейтингі | ❌ Жоқ |
-| ExecutorProfile endpoints | ❌ Модель бар, endpoint жоқ |
+### 1.1 Шаруа интерфейсі (Тауар қосу)
 
-**Қажетті schema өзгерістер:**
-```
-ServiceType:
-  + equipmentCategory: TRACTOR | COMBINE | TRUCK | WORKER | OTHER
-  + pricingUnit: PER_HECTARE | PER_HOUR | PER_DAY
-
-FieldJob:
-  + workerCount: Int?
-  + preferredStartDate: DateTime?
-  + durationHours: Float?
-  + pricingModel: PER_HECTARE | PER_HOUR | PER_DAY
-
-Жаңа модельдер:
-  EquipmentItem (executorId, category, name, specs)
-  FieldJobReview (jobId, reviewerId, rating, comment)
-```
-
-### Қойма қызметтері — толығымен жоқ
-
-| Не қажет | Қазіргі жағдай |
-|----------|---------------|
-| Қойма тізімі (орын, көлем, баға) | ❌ Жоқ (тек WarehouseIcon бар) |
-| Қойма жалдау/бронь | ❌ Жоқ |
-| Қойма іздеу (регион, көлем) | ❌ Жоқ |
-| Жер қызметтері | ❌ Жоқ |
-
-### Сертификаттау / Экспорт — толығымен жоқ
-
-| Не қажет | Қазіргі жағдай |
-|----------|---------------|
-| Сертификат өтінімі | ❌ Жоқ |
-| Құжат жүктеу | ❌ Жоқ |
-| Экспорт нұсқаулық | ❌ Жоқ |
-| Сертификат мекемелер базасы | ❌ Жоқ |
-
-### Рейтинг/пікір жүйесі — толықтыру қажет
-
-| Не қажет | Қазіргі жағдай |
-|----------|---------------|
-| Пікір жазу (review) | ❌ Жоқ |
-| Рейтинг есептеу | ⚠️ `User.ratingStats` Json бар, бірақ толтырылмайды |
-| Пікір көрсету | ✅ UI-де көрсетіледі |
-
----
-
-## 1. Жалпы архитектура
+**1 экран, максимум 5 өріс:**
 
 ```
-┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
-│  Mobile App     │────▶│  Backend API     │────▶│  PostgreSQL 15   │
-│  (Expo/RN)      │     │  (NestJS)        │     │                  │
-│  :8081          │     │  :3000           │     │  :5432           │
-└─────────────────┘     └──────────────────┘     └──────────────────┘
-                              │
-                        ┌─────┴─────┐
-                        │ Swagger   │
-                        │ /api      │
-                        └───────────┘
+┌─────────────────────────┐
+│ 📷 Фото                │
+│ ─────────────────────── │
+│ Атауы: [Бидай          ]│
+│ Бағасы: [180 ₸/кг      ]│
+│ Салмағы: [500 кг        ]│
+│ Қай ауыл: [Қаскелең    ]│
+│                         │
+│ ○ Қазір бар             │
+│ ○ Алдын ала тапсырыс    │
+│                         │
+│ Қанша қалды: ████░░ 60% │
+│                         │
+│ [ Жариялау ]            │
+└─────────────────────────┘
 ```
 
-**Рөлдер**: `FARMER`, `BUYER`, `CARRIER`, `EXECUTOR`, `ADMIN`, `SUPER_ADMIN`, `WHOLESALE_BUYER`
+**Артық ештеңе жоқ.** Сертификат, склад, артық форма — кейін қосылады.
 
----
+### 1.2 Сатып алушы интерфейсі
 
-## 2. Аутентификация (Auth)
+**Іздеу (өте жылдам)** + **Фильтр:**
+- Аудан
+- Баға
+- Тек бүгінгі жеткізу
+- «Ауылдан тікелей» белгісі
 
-### Тіркелу (Register)
-```
-POST /auth/register
-├── email/phone + password + role
-├── homeAddressText, homeRegion, homeLat, homeLng (міндетті)
-├── CARRIER → maxWeightKg, vehicleType, maxVolumeM3 (қосымша)
-├── bcrypt hash → User жазбасы
-├── CARRIER болса → CarrierProfile жазбасы
-└── JWT accessToken (15 мин) + refreshToken (30 күн) қайтарады
-```
+**Тапсырыс беру = 1 батырма**
 
-### Кіру (Login)
-```
-POST /auth/login
-├── email НЕМЕСЕ phone + password
-├── bcrypt.compare()
-└── JWT accessToken + refreshToken қайтарады
-```
+**Категориялар — қарапайым:**
 
-### Жаңарту (Refresh)
-```
-POST /auth/refresh
-├── refreshToken → tokenHash тексеріледі
-├── Ескі токен жойылады
-└── Жаңа accessToken + refreshToken
-```
+| Категория | Мысалдар |
+|-----------|----------|
+| 🥩 Ет | Қой, сиыр, жылқы |
+| 🥛 Сүт | Сүт, қаймақ, ірімшік |
+| 🥔 Көкөніс | Картоп, сәбіз, пияз |
+| 🍎 Жеміс | Алма, алмұрт |
+| 🍞 Дайын өнім | Нан, баурсақ, құрт |
 
----
+> Іздеу жүйесі Google сияқты ауыр болмауы керек.
 
-## 3. Жармеңке (Marketplace / Market)
+### 1.3 Backend логикасы (қазір іске асырылған)
 
-### 3.1 Жарнама (Listing)
-
-**Фермер жарнама жасайды:**
 ```
 POST /market/listings
 ├── title, description, category, unit, price, quantity, currency
-├── addressText (міндетті)
-├── Тексеру: тек FARMER рөлі
+├── addressText (қай ауыл)
+├── Тек FARMER рөлі
 └── status = PUBLISHED
-```
 
-**Суреттер жүктеу:**
-```
-POST /market/listings/:id/images
-├── Multer арқылы файл жүктеу
-├── File + ListingImage жазбалары
-└── sortOrder бойынша сұрыпталады
-```
+POST /market/listings/:id/images → Фото жүктеу
 
-**Баға деңгейлері (Price Tiers):**
-```
-ProductPriceTier: minQty, maxQty, unitPrice, currency
-├── Сатып алушы тапсырыс бергенде тиісті деңгей таңдалады
-└── Мысалы: 1-100кг = 200₸, 100-500кг = 180₸, 500+кг = 150₸
-```
-
-### 3.2 Ұсыныс (Offer)
-
-**Сатып алушы ұсыныс жасайды:**
-```
-POST /market/listings/:id/offers
+POST /market/listings/:id/offers → Сатып алушы ұсыныс жасайды
 ├── quantity, price, message
-├── Тексеру: тек BUYER рөлі
-└── Offer.status = SENT
+└── Тек BUYER рөлі
+
+POST /market/offers/:id/accept → Deal жасалады (автоматты logistics)
+├── pickupLat/Lng = seller мекен-жай
+├── dropoffLat/Lng = buyer мекен-жай
+└── cargoType, weight автоматты толтырылады
 ```
 
-**Фермер ұсынысқа жауап:**
+### 1.4 Маркетплейс GAP (не жетіспейді)
+
+| Визия | Қазіргі жағдай | Статус |
+|-------|---------------|--------|
+| 5 өріс, 1 экран | 8+ өріс, addressText міндетті | ⚠️ Қарапайымдату қажет |
+| «Қазір бар» / «Алдын ала тапсырыс» | Жоқ (тек PUBLISHED) | ❌ |
+| «Қанша қалды» индикатор | `reservedQty` бар, UI жоқ | ⚠️ |
+| «Ауылдан тікелей» белгісі | Жоқ | ❌ |
+| «Тек бүгінгі жеткізу» фильтр | Жоқ | ❌ |
+| Категория = 5 қарапайым | category = string (шектеусіз) | ⚠️ Enum қажет |
+| 1 батырма тапсырыс | Offer → Accept → Deal → Order | ⚠️ Ағымды қарапайымдату |
+
+---
+
+## 2. Тасымал жүйесі — эстафеталық логика
+
+> Бұл Qunarly-дің **ең ерекше** жері.
+
+### 2.1 Үш кезең
+
 ```
-POST /market/offers/:id/accept   → Deal жасалады (автоматты logistics мәліметтерімен)
-POST /market/offers/:id/counter  → Offer.status = COUNTERED, жаңа unitPrice
-POST /market/offers/:id/reject   → Offer.status = REJECTED
+┌──────────┐    QR     ┌──────────────┐    QR     ┌──────────┐
+│  АУЫЛ    │──────────▶│ АУДАН ОРТАЛЫҚ │──────────▶│  ҚАЛА    │
+│  🚗      │  1-кезең  │  🚙          │  2-кезең  │  🚕      │
+│  250₸    │           │              │           │  1250₸   │
+└──────────┘           └──────────────┘           └──────────┘
+ Ауыл таксиі            QR тапсыру               Қала таксиі
+ сәлемдемелерді          кім жауапты              таратады
+ алып келеді             екенін тіркеу
 ```
 
-### 3.3 Мәміле (Deal)
+### 1-кезең: Ауыл → Аудан орталығы
+- Ауыл таксиі сәлемдемелерді жинайды
+- Leg price = 250₸
+- Жүргізуші статустары: OFFERING → ACCEPTED → STARTED → ARRIVED
 
-**Accept кезінде автоматты логистика:**
+### 2-кезең: Аудан → Қала
+- QR арқылы тапсыру (қате болмау, жоғалмау, кім жауапты)
+- Leg price = 1250₸
+- **Leg2 GATING**: Leg1 тапсырылмайынша Leg2 бастай алмайды
+
+### 3-кезең: Қала ішіндегі логика
+- Қала таксиі тараты
+- **Бос қайтпау**: арғы бетке қайтып бара жатқан таксиге тапсыру
+- Жарты бағамен беру мүмкіндігі
+
+### 2.2 QR Handoff логикасы (іске асырылған)
+
 ```
-Deal жасалады →
-├── agreedQuantity, agreedUnitPrice
-├── cargoWeightKg = buyer.homeLat? → seller/buyer мекен-жай
-├── pickupLat/Lng = seller address
-├── dropoffLat/Lng = buyer address
-├── pickupRegion, dropoffRegion
-└── status = NEGOTIATING
+1. Қабылдаушы: POST /delivery/legs/:id/handoff/token → QR жасайды (2 мин)
+2. Жіберуші: POST /delivery/legs/:id/handoff/confirm → QR сканерлейді
+3. GPS тексерісі (<=100м)
+4. Қабылдаушы: POST /delivery/legs/:id/handoff/receive → Растайды
+5. POST /delivery/legs/:id/handoff/complete → Хабта тапсыру аяқталады
 ```
 
-**Мәмілені растау:**
+### 2.3 Артықшылық
+- ✅ Склад қажет емес
+- ✅ Курьер штаты қажет емес
+- ✅ Жергілікті такси инфрақұрылымын пайдалану
+- ✅ ProofEvent арқылы кім жауапты — анық
+
+### 2.4 Тасымал GAP
+
+| Визия | Қазіргі жағдай | Статус |
+|-------|---------------|--------|
+| 3-кезең (қала ішінде) | 2 leg (ауыл→хаб→қала) | ⚠️ Қала ішіндегі тарату жоқ |
+| Бос қайтпау | Жоқ | ❌ Динамикалық маршрут қажет |
+| Жарты бағамен тапсыру | Жоқ | ❌ |
+
+---
+
+## 3. Такси бөлімі — ең қарапайым
+
+> Карта жоқ. Навигатор жоқ. Кезек ғана.
+
+### 3.1 Экран — 2 батырма
+
 ```
-POST /market/deals/:id/confirm → status = CONFIRMED
-POST /market/deals/:id/open-logistics → ShipmentJob жасалады
+┌─────────────────────────────┐
+│                             │
+│   [ Кезекте 3 машина ]      │
+│                             │
+│   1️⃣ 🟢 Асылбек – дайын    │
+│   2️⃣ 🟡 Серік – 10 мин     │
+│   3️⃣ 🔴 Марат – күтіп тұр  │
+│                             │
+│   [ 🚗 Кезекке тұру ]       │
+│   [ ✅ Жолға шықтым ]        │
+│                             │
+└─────────────────────────────┘
 ```
+
+**Түстер:**
+- 🟢 Дайын
+- 🟡 Жақында
+- 🔴 Күтіп тұр
+
+**WhatsApp деңгейінде түсінікті.**
+
+### 3.2 Backend логикасы (іске асырылған)
+
+```
+TaxiRoute: fromHubId → toHubId
+├── VILLAGE_TO_DISTRICT (ауыл → аудан)
+├── DISTRICT_TO_CITY (аудан → қала)
+└── VILLAGE_TO_CITY (ауыл → қала)
+
+DriverQueue:
+├── POST /drivers/queue/join → Кезекке тұру
+├── POST /drivers/queue/ping → Белсенділік
+├── capacity = 4 (орын)
+├── availableSeats = capacity - confirmed
+└── 🟢/🟡/🔴 статустары: IN_QUEUE / OFFERED / ON_TRIP
+
+RideRequest:
+├── POST /taxi/requests → Жолаушы сұраныс
+├── seats, cargoType, departureType
+├── Жүйе → DriverOffer (TTL = 45 сек)
+└── PENDING → MATCHED → DRIVER_EN_ROUTE → COMPLETED
+
+TripSession:
+├── POST /trips/open → Рейс ашу (totalSeats)
+├── POST /trips/:id/join → Орын алу
+├── POST /trips/:id/start → Жолға шығу
+└── POST /trips/:id/complete → Аяқталды
+```
+
+### 3.3 Такси GAP
+
+| Визия | Қазіргі жағдай | Статус |
+|-------|---------------|--------|
+| 2 батырма (кезек + жолға шық) | ✅ Бар | ✅ |
+| Кезек визуалы (🟢🟡🔴) | ✅ Мобильді экранда бар | ✅ |
+| Карта жоқ | ⚠️ Map экраны бар | ⚠️ Артық болуы мүмкін |
+| Жүк + адам бірге | ✅ cargoType: NONE/SMALL/LARGE | ✅ |
 
 ---
 
@@ -211,359 +256,190 @@ POST /orders
 ├── listingId, quantity, destinationText, destLat, destLng
 ├── Баға тиері бойынша unitPrice таңдалады
 ├── idempotencyKey → қайталануды болдырмайды
-├── DeliveryRequest жасалады
-│   ├── originText = listing.addressText
-│   └── destinationText = buyer мекен-жайы
 │
 ├── Хаб анықтау: PresenceService.resolveHub(sellerLat, sellerLng)
-│   ├── Хабтан тыс → 2 leg (village→hub=250₸, hub→city=1250₸)
-│   └── Хаб ішінде → 1 leg (hub→city=1250₸)
+│   ├── Хабтан тыс → 2 leg (ауыл→хаб=250₸, хаб→қала=1250₸)
+│   └── Хаб ішінде → 1 leg (хаб→қала=1250₸)
 │
 ├── DeliveryLeg жазбалары жасалады
-│   ├── sortOrder = 1, 2
-│   ├── status = OFFERING
-│   └── price = 250 немесе 1250
-│
-├── CommissionRecord жасалады
-│   ├── productRateApplied, deliveryRateApplied
-│   ├── JarmenkeEvent override тексеріледі
-│   └── source = DEFAULT немесе EVENT_OVERRIDE
+├── CommissionRecord (~3% комиссия)
+│   └── JarmenkeEvent override тексеріледі
 │
 └── Order.status = PLACED
 ```
 
 ---
 
-## 5. Жеткізу (Delivery / Relay System)
+## 5. Комиссия жүйесі
 
-### 5.1 Leg өмірлік циклі:
+> Комиссияны төмен ұстау — **~3%**
+
 ```
-OFFERING → ACCEPTED → STARTED → ARRIVED → COMPLETED
-    │          │          │          │          │
-    │          │          │          │          └── completedAt, commission есептеледі
-    │          │          │          └── arrivedAt, arrivedLat/Lng
-    │          │          └── startedAt
-    │          └── acceptedAt, driverId орнатылады
-    └── Жүргізушілерге ұсынылады
-```
-
-### 5.2 Handoff (эстафета):
-```
-2-leg жеткізу жағдайында:
-
-Leg1 жүргізуші:
-  1. POST /delivery/legs/:id/handoff/token → Қабылдаушы QR жасайды (2 мин)
-  2. POST /delivery/legs/:id/handoff/confirm → Жіберуші QR сканерлейді
-  3. GPS тексерісі (<=100м)
-  4. POST /delivery/legs/:id/handoff/receive → Қабылдаушы растайды
-  5. POST /delivery/legs/:id/handoff/complete → Хабта тапсыру аяқталады
-
-Leg2 GATING:
-  ├── Leg2 ACCEPTED болса да, Leg1 handoff аяқталмайынша БАСТАЙ АЛМАЙДЫ
-  ├── Leg1 LEG_ARRIVED proof қажет
-  └── Admin unlock-mainline арқылы ашуға болады
+CommissionRecord:
+├── productRateApplied (мыс: 0.03)
+├── deliveryRateApplied (мыс: 0.03)
+├── productCommissionAmount = totalPrice * rate
+├── deliveryCommissionAmount = deliveryFee * rate
+├── source = DEFAULT немесе EVENT_OVERRIDE (жармеңке кезінде)
+└── Idempotent: eventKey арқылы қайталанбайды
 ```
 
-### 5.3 Drop-Pick (тастап кету):
-```
-POST /delivery/legs/:id/drop-pick/drop
-├── droppedBy, dropLat/Lng, dropPhoto1/2
-├── pickupTokenHash, pickupExpiresAt
-└── status = DROPPED
-
-POST /delivery/legs/:id/drop-pick/pickup
-├── pickupBy, pickupLat/Lng, pickupPhoto1/2
-├── Token тексерісі + GPS тексерісі
-└── status = PICKED_UP
-```
-
-### 5.4 Commission (комиссия):
-```
-Leg аяқталғанда ProofEvent жасалады:
-├── eventKey = "commission:delivery:{orderId}:{legId}:{eventType}"
-├── metaJson = { commissionAmount, rate, ... }
-├── Idempotent: бірдей eventKey қайталанбайды
-└── Бұл жалғыз ақша есебі (in-app transactions жоқ)
-```
+**JarmenkeEvent** — арнайы іс-шара кезінде комиссия өзгертілуі мүмкін.
 
 ---
 
-## 6. Логистика (Logistics / Shipments)
+## 6. Дала жұмыстары / Техника жалға беру (Field)
 
-### ShipmentJob өмірлік циклі:
+### Қазір бар:
 ```
-CREATED → OFFERED → ASSIGNED → PICKED_UP → IN_TRANSIT → DELIVERED
-    │                    │                        │
-    │                    └── acceptedBy (CARRIER)  └── cancel мүмкін
-    └── Баға есептелу:
-        ├── baseFee = 500
-        ├── perKm = 15
-        ├── perKg = 2
-        ├── perM3 = 50
-        ├── surcharge (refrig, livestock, closed body)
-        └── estimatedPrice
+POST /field/jobs
+├── serviceTypeId, areaHa, lat/lng
+├── priceEstimate = baseRate * areaHa + travelFee
+└── CREATED → BROADCASTED → ACCEPTED → IN_PROGRESS → COMPLETED
 ```
 
-### Carrier ұсыну:
-```
-GET /logistics/shipments/:id/recommendations
-├── Region сәйкестігі
-├── CargoType сәйкестігі
-├── Capacity жеткіліктілігі
-└── Рейтинг бойынша сұрыпталады
-```
+### Визия бойынша не жетіспейді:
+
+| Визия | Қазіргі жағдай | Статус |
+|-------|---------------|--------|
+| Трактор, комбайн, жүк көлігі | ServiceType тек name+baseRate | ❌ Категория жоқ |
+| Жұмысшы жалдау | Тек техника | ❌ |
+| Сағатына/күніне баға | Тек гектарына | ❌ |
+| Техника күнтізбесі | Жоқ | ❌ |
+| Орындаушы рейтингі | Жоқ | ❌ |
 
 ---
 
-## 7. Такси (Rural Taxi)
+## 7. Админ панелі
 
-### 7.1 Бағыт (Route):
-```
-TaxiRoute: fromHubId → toHubId, routeType
-├── VILLAGE_TO_DISTRICT
-├── DISTRICT_TO_CITY
-└── VILLAGE_TO_CITY
-```
+### Іске асырылған API:
 
-### 7.2 Жолаушы ағымы:
-```
-1. GET /taxi/routes → Бағыттарды көру
-2. POST /taxi/requests → Сұраныс жасау (routeId, seats, cargoType, departureType)
-   └── status = PENDING
-3. Жүйе → DriverOffer жасайды (TTL = 45 сек)
-4. Жүргізуші қабылдайды → status = MATCHED
-5. DRIVER_EN_ROUTE → IN_RIDE → COMPLETED
-```
+**GET (оқу):**
+- `/admin/orders` — тапсырыстар (cursor pagination)
+- `/admin/orders/:id` — толық мәліметі
+- `/admin/delivery/stuck` — тұрып қалғандар (WAITING_PROOF, LEG2_BLOCKED, NO_DRIVER, TIMEOUT)
+- `/admin/disputes` — даулар
+- `/admin/stats` — KPI (ordersToday, orders7d, commission, chart7d)
+- `/admin/audit` — аудит журналы
+- `/admin/users` — пайдаланушылар
+- `/admin/commission/config`, `/admin/commission/ledger` — комиссия
+- `/admin/fraud/signals`, `/admin/access-list` — алаяқтық
+- `/admin/infra/health` — инфрақұрылым денсаулығы
+- `/admin/exports/stats`, `/admin/exports/commission` — CSV
 
-### 7.3 Жүргізуші ағымы:
-```
-1. POST /drivers/queue/join → Кезекке тұру (routeId, capacity)
-   └── DriverQueue.status = IN_QUEUE
-2. POST /drivers/queue/ping → Белсенділікті растау
-3. GET /drivers/offers/pending → Ұсыныстарды көру
-4. POST /drivers/offers/:id/accept → Қабылдау
-5. POST /drivers/queue/passengers/:id/confirm → Жолаушыны растау
-6. POST /drivers/queue/on-the-way → Жолға шығу
-```
+**POST (жазу — барлығы AuditLog + reason):**
+- Тапсырысты жою, статусын мәжбүрлеу
+- Дау ашу/шешу, қайтару белгісі
+- Leg reassign, unlock, force-complete
+- SLA, Alert, Playbook CRUD
+- Hub, Route жасау
+- CommissionConfig, JarmenkeEvent, AccessList, RateLimit
+- FraudSignal resolve
 
-### 7.4 TripSession (рейс):
-```
-POST /trips/open → OPEN (totalSeats орнатылады)
-POST /trips/:id/join → bookedSeats артады
-POST /trips/:id/leave → bookedSeats азаяды
-POST /trips/:id/closeIntent → CLOSING (3 мин)
-POST /trips/:id/start → IN_PROGRESS
-POST /trips/:id/complete → COMPLETED
-POST /trips/:id/cancel → CANCELLED
-```
-
-### 7.5 Seat логикасы:
-```
-DriverQueue:
-├── capacity = жалпы орын (мыс: 4)
-├── availableSeats = capacity - confirmedCount
-└── CONFIRMED → seats азаяды, REMOVED/NO_SHOW → seats артады
-
-TripSession:
-├── totalSeats = жүргізуші бастапқыда орнатады
-├── bookedSeats = join кезінде atomic increment
-└── bookedSeats == totalSeats → толды
-```
+### Жетіспейді:
+- **Admin Web Dashboard** — `qunarly-admin-web/` бос (API бар, UI жоқ)
 
 ---
 
-## 8. Дала жұмыстары (Field Jobs)
+## 8. Географиялық инфрақұрылым
 
-### FieldJob өмірлік циклі:
-```
-CREATED → BROADCASTED → ACCEPTED → IN_PROGRESS → COMPLETED
-    │                       │                        │
-    │                       └── EXECUTOR қабылдайды   └── cancel мүмкін
-    └── Баға есептелу:
-        ├── priceEstimate = baseRate * areaHa + travelFee
-        └── travelFee = GPS қашықтық бойынша
-```
-
----
-
-## 9. Админ панелі (Admin API)
-
-### 9.1 Іске асырылған (GET):
-- ✅ `/admin/orders` — тапсырыстар тізімі (cursor pagination)
-- ✅ `/admin/orders/:id` — толық тапсырыс мәліметі
-- ✅ `/admin/delivery/stuck` — тұрып қалған жеткізулер (4 себеп: WAITING_PROOF, LEG2_BLOCKED, NO_DRIVER, TIMEOUT)
-- ✅ `/admin/disputes` — дауларды тізімі
-- ✅ `/admin/disputes/:id` — дау мәліметі
-- ✅ `/admin/stats` — KPI (ordersToday, orders7d, activeDeliveries, stuckDeliveries, commission)
-- ✅ `/admin/audit` — аудит журналы
-- ✅ `/admin/users` — пайдаланушылар тізімі
-- ✅ `/admin/users/:id` — пайдаланушы мәліметі
-- ✅ `/admin/alerts` — ескерту конфигтары
-- ✅ `/admin/playbooks` — инцидент нұсқаулықтары
-- ✅ `/admin/slas` — SLA конфигтары
-- ✅ `/admin/hubs` — хабтар тізімі
-- ✅ `/admin/routes` — маршруттар тізімі
-
-### 9.2 Іске асырылған (POST):
-- ✅ `/admin/orders/:id/cancel` — тапсырысты жою + AuditLog
-- ✅ `/admin/delivery/legs/:id/reassign` — жүргізушіні ауыстыру + AuditLog
-- ✅ `/admin/delivery/legs/:id/unlock-mainline` — leg2 блокін ашу + AuditLog
-
-### 9.3 Іске асырылған POST (бұрын stub еді):
-- ✅ `POST /admin/orders/:id/force-status` — enum тексерісі + статус өзгерту + AuditLog
-- ✅ `POST /admin/orders/:id/dispute` — OrderDispute жазбасын жасау + AuditLog
-- ✅ `POST /admin/orders/:id/dispute/resolve` — дауды шешу (resolution, closedAt) + AuditLog
-- ✅ `POST /admin/orders/:id/refund-flag` — RefundFlag жазбасын жасау + AuditLog
-- ✅ `POST /admin/delivery/legs/:id/force-complete` — leg COMPLETED + ProofEvent + AuditLog
-- ✅ `POST /admin/delivery/legs/:id/proof` — ProofEvent upsert + AuditLog
-- ✅ `POST /admin/delivery/legs/:id/adjust-geo` — arrivedLat/Lng жаңарту + AuditLog
-- ✅ `POST /admin/slas`, `POST /admin/slas/:id` — DeliverySlaConfig CRUD + AuditLog
-- ✅ `POST /admin/alerts`, `POST /admin/alerts/:id` — AlertConfig CRUD + AuditLog
-- ✅ `POST /admin/playbooks`, `POST /admin/playbooks/:id` — IncidentPlaybook CRUD + AuditLog
-- ✅ `POST /admin/hubs` — Hub жасау (normalizedName) + AuditLog
-- ✅ `POST /admin/routes` — TaxiRoute жасау (ACTIVE) + AuditLog
-- ✅ `POST /admin/commission/config` — CommissionConfig жасау + AuditLog
-- ✅ `POST /admin/jarmenke/events` — JarmenkeEvent жасау + AuditLog
-- ✅ `POST /admin/access-list` / `POST /admin/access-list/:id/remove` — AccessListEntry CRUD + AuditLog
-- ✅ `POST /admin/rate-limits` — RateLimitPolicy жасау + AuditLog
-- ✅ `POST /admin/fraud/signals/:id/resolve` — FraudSignal.status → RESOLVED/DISMISSED + AuditLog
-- ✅ `GET /admin/exports/stats` — нақты CSV (7 күндік chart деректері)
-- ✅ `GET /admin/exports/commission` — нақты CSV (CommissionRecord деректері)
-
-### 9.4 Іске асырылған GET (бұрын бос массив еді):
-- ✅ `GET /admin/commission/config` — CommissionConfig кестесінен
-- ✅ `GET /admin/commission/ledger` — CommissionRecord + Order мәліметтері
-- ✅ `GET /admin/commission/anomalies` — rate > 15% болған жазбалар
-- ✅ `GET /admin/jarmenke/events` — JarmenkeEvent кестесінен
-- ✅ `GET /admin/access-list` — AccessListEntry кестесінен
-- ✅ `GET /admin/fraud/signals` — FraudSignal кестесінен (status filter)
-- ✅ `GET /admin/rate-limits` — RateLimitPolicy кестесінен
-- ✅ `GET /admin/infra/health` — нақты hub/route статистикалары + дупликат анықтау
-- ✅ `GET /admin/infra/orphans` — inactive хабтарға байланысқан маршруттар
-
----
-
-## 10. Географиялық инфрақұрылым
-
-### Hub (хаб):
-```
-Hub: name, lat, lng, radiusKm (=0.8), isActive
-├── Жеткізу relay-дің қиылысу нүктесі
-├── Жаңа хаб: 5км ішінде дупликат тексерісі
-├── normalizedName → дупликат анықтау
-└── Маршруттар хабтарға байланысады
-```
-
-### Route (маршрут):
-```
-TaxiRoute: fromHubId → toHubId, routeType
-├── @@unique([fromHubId, toHubId, routeType])
-├── status: INACTIVE → ACTIVE → PAUSED → ARCHIVED
-└── Такси кезегі мен сұраныстар маршрутқа байланысады
-```
-
-### Region → District → Settlement иерархиясы:
 ```
 Region (облыс) → District (аудан) → Settlement (елді мекен)
-CommunityVillage — қолданушылар қосқан ауыл нүктесі (lat/lng)
+CommunityVillage — қолданушылар қосқан ауыл нүктесі
+
+Hub: name, lat, lng, radiusKm (=0.8)
+├── Эстафета қиылысу нүктесі
+├── 5км ішінде дупликат тексерісі
+└── Маршруттар хабтарға байланысады
+
+TaxiRoute: fromHubId → toHubId, routeType
+├── VILLAGE_TO_DISTRICT / DISTRICT_TO_CITY / VILLAGE_TO_CITY
+└── status: INACTIVE → ACTIVE → PAUSED → ARCHIVED
 ```
 
 ---
 
-## 11. Хабарламалар (Notifications)
+## 9. Хабарламалар + Push
 
 ```
 Notification: userId, type, title, body, dataJson, isRead
-├── Push: Expo Server SDK арқылы
-├── expoPushToken → User моделінде сақталады
-├── Типтер: TAXI_OFFER, ORDER_STATUS, DELIVERY_STATUS, ...
-└── In-app: GET /notifications/my
+├── Push: Expo Server SDK
+├── expoPushToken → User моделінде
+└── Типтер: TAXI_OFFER, ORDER_STATUS, DELIVERY_STATUS, ...
 ```
 
 ---
 
-## 12. Файлдар (Files)
+## 10. Мобильді қосымша
+
+| Tab | Не істейді |
+|-----|-----------|
+| **Home** | Dashboard, хабарламалар, жылдам әрекеттер |
+| **Market** | Жарнамалар тізімі, іздеу, ұсыныс, мәміле |
+| **Taxi** | Жолаушы сұраныс / Жүргізуші кезек |
+| **Logistics** | Shipments, QR handoff, delivery legs |
+| **Field** | Дала жұмыстары жасау/қабылдау |
+
+---
+
+## 11. Архитектура
 
 ```
-POST /files/upload
-├── Multer → uploads/ директориясы
-├── File моделі: ownerId, type, url, metaJson
-├── entityType: PROFILE_AVATAR, LISTING_IMAGE, OTHER
-└── ListingImage, Profile.avatarFile байланыстары
+┌─────────────────┐     ┌──────────────────┐     ┌──────────────────┐
+│  Mobile App     │────▶│  Backend API     │────▶│  PostgreSQL 15   │
+│  (Expo/RN)      │     │  (NestJS)        │     │                  │
+│  :8081          │     │  :3000           │     │  :5432           │
+└─────────────────┘     └──────────────────┘     └──────────────────┘
 ```
 
----
-
-## 13. Мобильді қосымша экрандары
-
-| Tab | Экрандар | API интеграциясы |
-|-----|----------|-----------------|
-| Home | Dashboard, notifications, quick actions | profiles/me, notifications/my |
-| Market | Listings, details, create, offers, deals | market/* |
-| Taxi | Passenger request, driver queue, trips | taxi/*, drivers/*, trips/* |
-| Logistics | Shipments, handoff QR, delivery legs | logistics/*, delivery/* |
-| Field | Job list, create, lifecycle | field/* |
-
-**Жетіспейтін экрандар:**
-- ❌ Chat/хабарлама жүйесі
-- ❌ Рейтинг/пікір жазу
-- ❌ Төлем интеграциясы
-- ❌ Тест посттар (Home) — API жоқ
-- ❌ Байланыс батырмасы — «Жақында» деп stub
+**Рөлдер**: `FARMER`, `BUYER`, `CARRIER`, `EXECUTOR`, `ADMIN`, `SUPER_ADMIN`, `WHOLESALE_BUYER`
 
 ---
 
-## 14. Жетіспейтін тұстар (Summary)
+## 12. Қазіргі жағдай — толық кесте
 
-### Backend (іске асырылды):
-- ✅ 20+ Admin stub → нақты логикамен
-- ✅ Admin GET → нақты деректермен
-- ✅ CSV экспорт → нақты деректер
-- ✅ jest.config.ts → unit тесттер жұмыс істейді
-
-### Backend (жетіспейтін):
-1. **Техника жалға беру кеңейтуі** — equipmentCategory, pricingUnit, workerCount
-2. **Қойма модулі** — Warehouse model + CRUD + іздеу
-3. **Сертификаттау модулі** — Certificate + ExportAssistance
-4. **Рейтинг/пікір** — Review model + CRUD + агрегация
-5. **Payments** — Kaspi QR интеграциясы
-6. **Chat/хабарлама** — real-time messaging
-
-### Frontend (жетіспейтін):
-1. **Admin Web Dashboard** — `qunarly-admin-web/` бос
-2. **Chat экрандары** — мобильді қосымшада жоқ
-3. **Рейтинг/пікір UI** — жазу функциясы жоқ
-4. **Төлем UI** — Kaspi QR экрандары жоқ
-5. **Қойма экрандары** — мобильді қосымшада жоқ
-6. **Сертификаттау экрандары** — мобильді қосымшада жоқ
-
-### Инфрақұрылым:
-1. **ESLint** — конфиг жоқ
-2. **CI/CD** — тек k6 load test workflow
+| Модуль | Статус | Ескерту |
+|--------|--------|--------|
+| Аутентификация | ✅ | Register, login, JWT refresh |
+| Маркетплейс | ✅ | Listings, offers, deals |
+| Тапсырыстар | ✅ | Idempotent, relay legs, commission |
+| Эстафеталық жеткізу | ✅ | 2-leg, QR handoff, GPS тексерісі |
+| Логистика (shipments) | ✅ | Carrier matching, pricing |
+| Такси кезек | ✅ | Queue, offers, trips |
+| Дала жұмыстары | ⚠️ | Негізі бар, категориялар жоқ |
+| Админ API | ✅ | 40+ endpoint, AuditLog |
+| Хабарламалар | ✅ | Push + in-app |
+| Рейтинг/пікір | ⚠️ | Тек көрсету, жазу жоқ |
+| Қала ішіндегі тарату | ❌ | 3-кезең жоқ |
+| Бос қайтпау логикасы | ❌ | Динамикалық маршрут жоқ |
+| Қойма | ❌ | Толығымен жоқ |
+| Сертификаттау/экспорт | ❌ | Толығымен жоқ |
+| Admin Web Dashboard | ❌ | API бар, UI жоқ |
+| Chat/хабарлама | ❌ | Жоқ |
+| Kaspi QR төлем | ❌ | Жоқ |
 
 ---
 
-## 15. Даму жоспары (Roadmap)
+## 13. Даму жоспары
 
-### Phase 1: MVP толықтыру (қазір)
+### 1-кезең: MVP толықтыру
+- [x] Маркетплейс ✅
 - [x] Ауыл такси ✅
-- [x] Жармеңке маркетплейс ✅
-- [x] Эстафеталық жеткізу ✅
-- [x] Дала жұмыстары (негізі) ✅
+- [x] Эстафеталық логистика (2 leg) ✅
 - [x] Админ API ✅
+- [ ] Маркетплейс қарапайымдату (5 өріс, «Қазір бар» батырмасы)
 - [ ] Рейтинг/пікір жүйесі
-- [ ] Техника жалға беру кеңейтуі (категориялар, баға модельдері)
+- [ ] Техника категориялары + баға модельдері
 
-### Phase 2: Кеңейту
-- [ ] Қойма қызметтері модулі
-- [ ] Admin Web Dashboard (React)
-- [ ] Chat/хабарлама жүйесі (WebSocket)
-- [ ] Kaspi QR төлем интеграциясы
-- [ ] ExecutorProfile endpoints
+### 2-кезең: Кеңейту
+- [ ] 3-кезең логистика (қала ішінде тарату)
+- [ ] Бос қайтпау логикасы
+- [ ] Admin Web Dashboard
+- [ ] Chat/хабарлама (WebSocket)
+- [ ] Kaspi QR төлем
 
-### Phase 3: Масштабтау
-- [ ] Сертификаттау / экспорт модулі
-- [ ] Жер қызметтері
-- [ ] AI-негізделген баға ұсыну
-- [ ] Мультитілді (қазақша/орысша)
-- [ ] PWA admin dashboard
+### 3-кезең: Масштабтау
+- [ ] Қойма қызметтері
+- [ ] Экспорт / Сертификаттау
+- [ ] Агроном сервис
+- [ ] AI баға ұсыну
