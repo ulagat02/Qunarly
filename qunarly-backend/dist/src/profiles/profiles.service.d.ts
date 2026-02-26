@@ -1,0 +1,68 @@
+import { PrismaService } from '../common/prisma.service';
+import { FilesService } from '../files/files.service';
+import { UpdateProfileDto } from './dto/update-profile.dto';
+export declare class ProfilesService {
+    private prisma;
+    private filesService;
+    constructor(prisma: PrismaService, filesService: FilesService);
+    getByUserId(userId: string): Promise<{
+        firstName: string;
+        displayName: string;
+        phone: string | null;
+        regionId: string | null;
+        regionName: string | null;
+        districtId: string | null;
+        districtName: string | null;
+        settlementId: string | null;
+        settlementName: string | null;
+        addressText: string | null;
+        lat: number | null;
+        lng: number | null;
+        homeUpdatedAt: Date | null;
+        farmName: string | null;
+        avatarUrl: string | null;
+        bio: string | null;
+        publicProfile: boolean;
+        ratingStats: string | number | boolean | import("@prisma/client/runtime/library").JsonObject | import("@prisma/client/runtime/library").JsonArray | null;
+    } | null>;
+    upsertProfile(userId: string, dto: UpdateProfileDto): Promise<{
+        firstName: string;
+        displayName: string;
+        phone: string | null;
+        regionId: string | null;
+        regionName: string | null;
+        districtId: string | null;
+        districtName: string | null;
+        settlementId: string | null;
+        settlementName: string | null;
+        addressText: string | null;
+        lat: number | null;
+        lng: number | null;
+        homeUpdatedAt: Date | null;
+        farmName: string | null;
+        avatarUrl: string | null;
+        bio: string | null;
+        publicProfile: boolean;
+        ratingStats: string | number | boolean | import("@prisma/client/runtime/library").JsonObject | import("@prisma/client/runtime/library").JsonArray | null;
+    }>;
+    uploadAvatar(userId: string, file: Express.Multer.File, baseUrl?: string): Promise<{
+        firstName: string;
+        displayName: string;
+        phone: string | null;
+        regionId: string | null;
+        regionName: string | null;
+        districtId: string | null;
+        districtName: string | null;
+        settlementId: string | null;
+        settlementName: string | null;
+        addressText: string | null;
+        lat: number | null;
+        lng: number | null;
+        homeUpdatedAt: Date | null;
+        farmName: string | null;
+        avatarUrl: string | null;
+        bio: string | null;
+        publicProfile: boolean;
+        ratingStats: string | number | boolean | import("@prisma/client/runtime/library").JsonObject | import("@prisma/client/runtime/library").JsonArray | null;
+    } | null>;
+}

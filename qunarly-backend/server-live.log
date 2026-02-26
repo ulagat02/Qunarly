@@ -1,0 +1,1992 @@
+
+> qunarly-backend@0.1.0 start:dev
+> nest start --watch
+
+[2J[3J[H[[90m12:27:14 PM[0m] Starting compilation in watch mode...
+
+[96msrc/market/market.service.ts[0m:[93m52[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'districtId' does not exist in type 'Without<ProductListingCreateInput, ProductListingUncheckedCreateInput> & ProductListingUncheckedCreateInput'.
+
+[7m52[0m         districtId: resolvedDistrictId,
+[7m  [0m [91m        ~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m8969[0m:[93m5[0m
+    [7m8969[0m     data: XOR<ProductListingCreateInput, ProductListingUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: ProductListingSelect<DefaultArgs> | null | undefined; include?: ProductListingInclude<DefaultArgs> | null | undefined; data: (Without<...> & ProductListingUncheckedCreateInput) | (Without<...> & ProductListingCreateInput); }'
+
+[96msrc/market/market.service.ts[0m:[93m137[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'districtId' does not exist on type '{ images: ({ file: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; }; } & { ...; })[]; } & { ...; }'.
+
+[7m137[0m       districtId: listing.districtId ?? null,
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m161[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'districtId' does not exist on type '{ images: ({ file: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; }; } & { ...; })[]; } & { ...; }'.
+
+[7m161[0m       districtId: listing.districtId ?? null,
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+
+[[90m12:27:16 PM[0m] Found 3 errors. Watching for file changes.
+
+[2J[3J[H[[90m12:27:16 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/market/market.service.ts[0m:[93m52[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'districtId' does not exist in type 'Without<ProductListingCreateInput, ProductListingUncheckedCreateInput> & ProductListingUncheckedCreateInput'.
+
+[7m52[0m         districtId: resolvedDistrictId,
+[7m  [0m [91m        ~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m8969[0m:[93m5[0m
+    [7m8969[0m     data: XOR<ProductListingCreateInput, ProductListingUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: ProductListingSelect<DefaultArgs> | null | undefined; include?: ProductListingInclude<DefaultArgs> | null | undefined; data: (Without<...> & ProductListingUncheckedCreateInput) | (Without<...> & ProductListingCreateInput); }'
+
+[96msrc/market/market.service.ts[0m:[93m137[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'districtId' does not exist on type '{ images: ({ file: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; }; } & { ...; })[]; } & { ...; }'.
+
+[7m137[0m       districtId: listing.districtId ?? null,
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m161[0m:[93m27[0m - [91merror[0m[90m TS2339: [0mProperty 'districtId' does not exist on type '{ images: ({ file: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; }; } & { ...; })[]; } & { ...; }'.
+
+[7m161[0m       districtId: listing.districtId ?? null,
+[7m   [0m [91m                          ~~~~~~~~~~[0m
+
+[[90m12:27:16 PM[0m] Found 3 errors. Watching for file changes.
+
+[2J[3J[H[[90m4:15:39 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m4:15:40 PM[0m] Found 0 errors. Watching for file changes.
+
+(node:64979) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 68565  - 01/21/2026, 4:15:42 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 68565  - 01/21/2026, 4:15:42 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m6:20:28 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m6:20:29 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 13187  - 01/21/2026, 6:20:30 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 13187  - 01/21/2026, 6:20:30 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m6:26:25 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/market/market.service.ts[0m:[93m25[0m:[93m34[0m - [91merror[0m[90m TS2339: [0mProperty 'regionId' does not exist on type 'CreateListingDto'.
+
+[7m25[0m     const resolvedRegionId = dto.regionId ?? seller?.regionId ?? undefined;
+[7m  [0m [91m                                 ~~~~~~~~[0m
+
+[[90m6:26:28 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m6:26:38 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/market/market.service.ts[0m:[93m50[0m:[93m9[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'customCategoryName' does not exist in type 'Without<ProductListingCreateInput, ProductListingUncheckedCreateInput> & ProductListingUncheckedCreateInput'.
+
+[7m50[0m         customCategoryName: dto.customCategoryName,
+[7m  [0m [91m        ~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m8981[0m:[93m5[0m
+    [7m8981[0m     data: XOR<ProductListingCreateInput, ProductListingUncheckedCreateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: ProductListingSelect<DefaultArgs> | null | undefined; include?: ProductListingInclude<DefaultArgs> | null | undefined; data: (Without<...> & ProductListingUncheckedCreateInput) | (Without<...> & ProductListingCreateInput); }'
+
+[[90m6:26:41 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m6:27:48 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m6:27:50 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 16142  - 01/21/2026, 6:27:51 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 16142  - 01/21/2026, 6:27:51 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m7:32:41 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:32:44 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 38456  - 01/21/2026, 7:32:45 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 38456  - 01/21/2026, 7:32:45 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m7:33:02 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[[90m7:33:02 PM[0m] Found 12 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:19 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:19 PM[0m] Found 17 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:34 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:34 PM[0m] Found 18 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:43 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m176[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m176[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:44 PM[0m] Found 28 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:38:47 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m176[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m176[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:38:47 PM[0m] Found 28 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:39:05 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m186[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m186[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:39:05 PM[0m] Found 20 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 41038  - 01/21/2026, 7:39:08 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 41038  - 01/21/2026, 7:39:08 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m7:44:22 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[[90m7:44:23 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m7:44:23 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[[90m7:44:23 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m7:44:25 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[[90m7:44:25 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m7:44:47 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:44:47 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 43580  - 01/21/2026, 7:44:48 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 43580  - 01/21/2026, 7:44:48 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m7:46:28 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:46:28 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 44478  - 01/21/2026, 7:46:29 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 44478  - 01/21/2026, 7:46:29 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+[2J[3J[H[[90m7:46:30 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:46:30 PM[0m] Found 0 errors. Watching for file changes.
+
+Schema Env Error: Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+[Nest] 44574  - 01/21/2026, 7:46:30 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 44574  - 01/21/2026, 7:46:30 PM   ERROR [ExceptionHandler] EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+Error: EPERM: operation not permitted, open '/Users/ulagatsametai/Documents/qunarly-backend/.env'
+    at Object.openSync (node:fs:559:18)
+    at Object.readFileSync (node:fs:443:35)
+    at ConfigModule.loadEnvFile (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:172:56)
+    at ConfigModule.forRoot (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/config/dist/config.module.js:70:20)
+    at Object.<anonymous> (/Users/ulagatsametai/Documents/qunarly-backend/src/app.module.ts:20:18)
+    at Module._compile (node:internal/modules/cjs/loader:1761:14)
+    at Object..js (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1481:32)
+    at Module._load (node:internal/modules/cjs/loader:1300:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+{ ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:19 PM[0m] Found 18 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:26 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:26 PM[0m] Found 18 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:34 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:34 PM[0m] Found 18 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:33:43 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m176[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m176[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:33:44 PM[0m] Found 28 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:38:47 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m158[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m158[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m159[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m159[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m176[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m176[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m41[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                        ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m199[0m:[93m71[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m199[0m             displayName: listing.seller.displayName ?? listing.seller.profile?.name ?? 'Фермер',
+[7m   [0m [91m                                                                      ~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                      ~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m200[0m:[93m67[0m - [91merror[0m[90m TS2339: [0mProperty 'profile' does not exist on type '{ id: string; regionId: string | null; districtId: string | null; status: UserStatus; createdAt: Date; email: string | null; phone: string | null; passwordHash: string; role: UserRole; villageName: string | null; }'.
+
+[7m200[0m             avatarUrl: listing.seller.avatarUrl ?? listing.seller.profile?.avatarFile?.url ?? null,
+[7m   [0m [91m                                                                  ~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:38:47 PM[0m] Found 28 errors. Watching for file changes.
+
+[2J[3J[H[[90m7:39:05 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[96msrc/market/market.service.ts[0m:[93m138[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m138[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/market/market.service.ts[0m:[93m186[0m:[93m13[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'displayName' does not exist in type 'UserSelect<DefaultArgs>'.
+
+[7m186[0m             displayName: true,
+[7m   [0m [91m            ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m23[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m23[0m     const resolvedDisplayName = user?.displayName ?? profile?.name ?? '';
+[7m  [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m24[0m:[93m37[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m24[0m     const resolvedAvatarUrl = user?.avatarUrl ?? profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                                    ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m36[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m36[0m       bio: user?.bio ?? null,
+[7m  [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m37[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m37[0m       publicProfile: user?.publicProfile ?? true,
+[7m  [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m38[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m38[0m       ratingStats: user?.ratingStats ?? null,
+[7m  [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m139[0m:[93m19[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m139[0m           data: { avatarUrl: file.url },
+[7m   [0m [91m                  ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/profiles/profiles.service.ts[0m:[93m150[0m:[93m39[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m150[0m     const resolvedDisplayName = user?.displayName ?? profile.name ?? '';
+[7m   [0m [91m                                      ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m161[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m161[0m       avatarUrl: user?.avatarUrl ?? avatarFile?.url ?? null,
+[7m   [0m [91m                       ~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m162[0m:[93m18[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m162[0m       bio: user?.bio ?? null,
+[7m   [0m [91m                 ~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m163[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m163[0m       publicProfile: user?.publicProfile ?? true,
+[7m   [0m [91m                           ~~~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m164[0m:[93m26[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ region: { name: string; id: string; parentId: string | null; } | null; district: { name: string; id: string; parentId: string | null; } | null; } & { regionId: string | null; id: string; email: string | null; ... 6 more ...; villageName: string | null; }'.
+
+[7m164[0m       ratingStats: user?.ratingStats ?? null,
+[7m   [0m [91m                         ~~~~~~~~~~~[0m
+
+[96msrc/profiles/profiles.service.ts[0m:[93m183[0m:[93m15[0m - [91merror[0m[90m TS2353: [0mObject literal may only specify known properties, and 'avatarUrl' does not exist in type '(Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput)'.
+
+[7m183[0m       data: { avatarUrl: created.url },
+[7m   [0m [91m              ~~~~~~~~~[0m
+
+  [96mnode_modules/.prisma/client/index.d.ts[0m:[93m3578[0m:[93m5[0m
+    [7m3578[0m     data: XOR<UserUpdateInput, UserUncheckedUpdateInput>
+    [7m    [0m [96m    ~~~~[0m
+    The expected type comes from property 'data' which is declared here on type '{ select?: UserSelect<DefaultArgs> | null | undefined; include?: UserInclude<DefaultArgs> | null | undefined; data: (Without<UserUpdateInput, UserUncheckedUpdateInput> & UserUncheckedUpdateInput) | (Without<...> & UserUpdateInput); where: UserWhereUniqueInput; }'
+
+[96msrc/users/users.service.ts[0m:[93m26[0m:[93m24[0m - [91merror[0m[90m TS2339: [0mProperty 'publicProfile' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m26[0m     if (!user || !user.publicProfile || user.role !== UserRole.FARMER) {
+[7m  [0m [91m                       ~~~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m42[0m:[93m30[0m - [91merror[0m[90m TS2339: [0mProperty 'displayName' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m42[0m     const displayName = user.displayName ?? user.profile?.name ?? 'Фермер';
+[7m  [0m [91m                             ~~~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m43[0m:[93m28[0m - [91merror[0m[90m TS2339: [0mProperty 'avatarUrl' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m43[0m     const avatarUrl = user.avatarUrl ?? user.profile?.avatarFile?.url ?? null;
+[7m  [0m [91m                           ~~~~~~~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m48[0m:[93m17[0m - [91merror[0m[90m TS2339: [0mProperty 'bio' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m48[0m       bio: user.bio ?? null,
+[7m  [0m [91m                ~~~[0m
+
+[96msrc/users/users.service.ts[0m:[93m56[0m:[93m25[0m - [91merror[0m[90m TS2339: [0mProperty 'ratingStats' does not exist on type '{ profile: ({ avatarFile: { id: string; createdAt: Date; ownerId: string; type: string; url: string; metaJson: JsonValue; entityType: FileEntityType | null; entityId: string | null; } | null; } & { ...; }) | null; region: { ...; } | null; district: { ...; } | null; } & { ...; }'.
+
+[7m56[0m       ratingStats: user.ratingStats ?? { rating: 0, reviewsCount: 0 },
+[7m  [0m [91m                        ~~~~~~~~~~~[0m
+
+[[90m7:39:06 PM[0m] Found 20 errors. Watching for file changes.
+
+[Nest] 41048  - 01/21/2026, 7:39:08 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] PrismaModule dependencies initialized +35ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] PassportModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] JwtModule dependencies initialized +19ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] AuditModule dependencies initialized +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] NotificationsModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] PaymentsModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] HealthModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] AppModule dependencies initialized +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] AuthModule dependencies initialized +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] UsersModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] FilesModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] RegionsModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] ProfilesModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] FieldModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] LogisticsModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [InstanceLoader] MarketModule dependencies initialized +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] AuthController {/auth}: +43ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +5ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/auth/refresh, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/users, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/users/:id, GET} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] PublicUsersController {/users}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/users/:id/public, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] ProfilesController {/profiles}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/profiles/me, GET} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/profiles/me, PUT} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/profiles/me/avatar, POST} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] FilesController {/files}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/files, POST} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/files/upload, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] RegionsController {/regions}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/regions, GET} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/regions/districts, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/regions, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] DistrictsController {/districts}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/districts, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] NotificationsController {/notifications}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/notifications/health, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] PaymentsController {/payments}: +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/payments/health, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] MarketController {/market}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings, GET} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, PATCH} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/images, POST} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/accept, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/counter, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/reject, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/deals, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/deals/:id, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/confirm, POST} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/open-logistics, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] FieldController {/field}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/accept, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/start, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/complete, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/cancel, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] LogisticsController {/logistics}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id, GET} route +1ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/accept, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/pickup-start, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/in-transit, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/deliver, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/cancel, POST} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RoutesResolver] HealthController {/health}: +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [RouterExplorer] Mapped {/health, GET} route +0ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM     LOG [NestApplication] Nest application successfully started +77ms
+[Nest] 41048  - 01/21/2026, 7:39:09 PM   ERROR [NestApplication] Error: listen EADDRINUSE: address already in use :::3000 +2ms
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/platform-express/adapters/express-adapter.js:95:32)
+    at /Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:173:16)
+    at async bootstrap (/Users/ulagatsametai/Documents/qunarly-backend/src/main.ts:51:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m7:44:22 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[[90m7:44:22 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m7:44:24 PM[0m] File change detected. Starting incremental compilation...
+
+[96msrc/common/public-rate-limit.guard.ts[0m:[93m1[0m:[93m53[0m - [91merror[0m[90m TS2724: [0m'"@nestjs/common"' has no exported member named 'TooManyRequestsException'. Did you mean 'BadRequestException'?
+
+[7m1[0m import { CanActivate, ExecutionContext, Injectable, TooManyRequestsException } from '@nestjs/common';
+[7m [0m [91m                                                    ~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  [96mnode_modules/@nestjs/common/exceptions/bad-request.exception.d.ts[0m:[93m9[0m:[93m22[0m
+    [7m9[0m export declare class BadRequestException extends HttpException {
+    [7m [0m [96m                     ~~~~~~~~~~~~~~~~~~~[0m
+    'BadRequestException' is declared here.
+
+[[90m7:44:24 PM[0m] Found 1 error. Watching for file changes.
+
+[2J[3J[H[[90m7:44:47 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:44:47 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 43581  - 01/21/2026, 7:44:48 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] PrismaModule dependencies initialized +940ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] PassportModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] JwtModule dependencies initialized +3ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] AuditModule dependencies initialized +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] NotificationsModule dependencies initialized +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] PaymentsModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] HealthModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +4ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] AppModule dependencies initialized +4ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] AuthModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] UsersModule dependencies initialized +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] FilesModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] RegionsModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] ProfilesModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] FieldModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] LogisticsModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [InstanceLoader] MarketModule dependencies initialized +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] AuthController {/auth}: +18ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/auth/refresh, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/users, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/users/:id, GET} route +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] PublicUsersController {/users}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/users/:id/public, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] ProfilesController {/profiles}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/profiles/me, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/profiles/me, PUT} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/profiles/me/avatar, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] FilesController {/files}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/files, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/files/upload, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] RegionsController {/regions}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/regions, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/regions/districts, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/regions, POST} route +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] DistrictsController {/districts}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/districts, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] NotificationsController {/notifications}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/notifications/health, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] PaymentsController {/payments}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/payments/health, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] MarketController {/market}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, PATCH} route +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/images, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/accept, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/counter, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/reject, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/deals, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/deals/:id, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/confirm, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/open-logistics, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] FieldController {/field}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs, GET} route +1ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/accept, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/start, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/complete, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/cancel, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] LogisticsController {/logistics}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/accept, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/pickup-start, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/in-transit, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/deliver, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/cancel, POST} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RoutesResolver] HealthController {/health}: +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [RouterExplorer] Mapped {/health, GET} route +0ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM     LOG [NestApplication] Nest application successfully started +41ms
+[Nest] 43581  - 01/21/2026, 7:44:49 PM   ERROR [NestApplication] Error: listen EADDRINUSE: address already in use :::3000 +2ms
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/platform-express/adapters/express-adapter.js:95:32)
+    at /Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:173:16)
+    at async bootstrap (/Users/ulagatsametai/Documents/qunarly-backend/src/main.ts:51:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v24.13.0
+[2J[3J[H[[90m7:46:28 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:46:28 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 44484  - 01/21/2026, 7:46:29 PM     LOG [NestFactory] Starting Nest application...
+[2J[3J[H[[90m7:46:30 PM[0m] File change detected. Starting incremental compilation...
+
+[[90m7:46:30 PM[0m] Found 0 errors. Watching for file changes.
+
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [NestFactory] Starting Nest application...
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] PrismaModule dependencies initialized +11ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] PassportModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] JwtModule dependencies initialized +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] AuditModule dependencies initialized +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] NotificationsModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] PaymentsModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] HealthModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] ConfigHostModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] AppModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] ConfigModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] AuthModule dependencies initialized +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] UsersModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] FilesModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] RegionsModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] ProfilesModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] FieldModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] LogisticsModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [InstanceLoader] MarketModule dependencies initialized +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] AuthController {/auth}: +11ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/auth/register, POST} route +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/auth/login, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/auth/refresh, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] UsersController {/users}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/users, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/users/:id, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] PublicUsersController {/users}: +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/users/:id/public, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] ProfilesController {/profiles}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/profiles/me, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/profiles/me, PUT} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/profiles/me/avatar, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] FilesController {/files}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/files, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/files/upload, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] RegionsController {/regions}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/regions, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/regions/districts, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/regions, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] DistrictsController {/districts}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/districts, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] NotificationsController {/notifications}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/notifications/health, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] PaymentsController {/payments}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/payments/health, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] MarketController {/market}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings, POST} route +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings/:id, PATCH} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/images, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/accept, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/counter, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/offers/:id/reject, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/listings/:id/offers, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/deals, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/deals/:id, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/confirm, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/market/deals/:id/open-logistics, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] FieldController {/field}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/accept, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/start, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/complete, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/field/jobs/:id/cancel, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] LogisticsController {/logistics}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id, GET} route +1ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/accept, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/pickup-start, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/in-transit, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/deliver, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/logistics/shipments/:id/cancel, POST} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RoutesResolver] HealthController {/health}: +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [RouterExplorer] Mapped {/health, GET} route +0ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM     LOG [NestApplication] Nest application successfully started +16ms
+[Nest] 44585  - 01/21/2026, 7:46:30 PM   ERROR [NestApplication] Error: listen EADDRINUSE: address already in use :::3000 +1ms
+node:net:1940
+    const ex = new UVExceptionWithHostPort(err, 'listen', address, port);
+               ^
+
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at ExpressAdapter.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/platform-express/adapters/express-adapter.js:95:32)
+    at /Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:183:30
+    at new Promise (<anonymous>)
+    at NestApplication.listen (/Users/ulagatsametai/Documents/qunarly-backend/node_modules/@nestjs/core/nest-application.js:173:16)
+    at async bootstrap (/Users/ulagatsametai/Documents/qunarly-backend/src/main.ts:51:3) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+Node.js v24.13.0
