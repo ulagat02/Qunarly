@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bgP" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8F0FF"/>
+      <stop offset="1" stop-color="#F7FAFF"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2F7BFF"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F8D7C1"/>
+      <stop offset="1" stop-color="#E8B79A"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="10" y="10" width="108" height="108" rx="26" fill="url(#bgP)"/>
+  <circle cx="64" cy="52" r="20" fill="url(#skin)"/>
+  <path d="M36 103c2-19 16-31 28-31s26 12 28 31" fill="url(#shirt)"/>
+  <path d="M46 82c6 6 12 9 18 9s12-3 18-9" fill="none" stroke="#93C5FD" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="64" cy="52" r="20" fill="none" stroke="#C7D2FE" stroke-width="3"/>
+</svg>

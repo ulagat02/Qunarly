@@ -1,0 +1,32 @@
+# deps
+node_modules/
+
+# builds
+dist/
+build/
+.next/
+out/
+
+# expo
+.expo/
+.expo-shared/
+
+# logs
+*.log
+server.log
+server-live.log
+
+# env
+.env
+.env.*
+!.env.example
+
+# prisma
+prisma/dev.db
+prisma/dev.db-journal
+
+# uploads
+uploads/
+
+# mac
+.DS_Store
