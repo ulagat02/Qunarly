@@ -326,37 +326,37 @@ CREATED → BROADCASTED → ACCEPTED → IN_PROGRESS → COMPLETED
 - ✅ `/admin/delivery/legs/:id/reassign` — жүргізушіні ауыстыру + AuditLog
 - ✅ `/admin/delivery/legs/:id/unlock-mainline` — leg2 блокін ашу + AuditLog
 
-### 9.3 Stub (жетіспейтін — `{ ok: true }` қайтарады):
-- ❌ `POST /admin/orders/:id/force-status` — мәжбүрлі статус өзгерту
-- ❌ `POST /admin/orders/:id/dispute` — дау ашу
-- ❌ `POST /admin/orders/:id/dispute/resolve` — дауды шешу
-- ❌ `POST /admin/orders/:id/refund-flag` — қайтару белгісі
-- ❌ `POST /admin/delivery/legs/:id/force-complete` — мәжбүрлі аяқтау
-- ❌ `POST /admin/delivery/legs/:id/proof` — дәлелдеме қосу
-- ❌ `POST /admin/delivery/legs/:id/adjust-geo` — координатты түзету
-- ❌ `POST /admin/slas`, `POST /admin/slas/:id` — SLA CRUD
-- ❌ `POST /admin/alerts`, `POST /admin/alerts/:id` — Alert CRUD
-- ❌ `POST /admin/playbooks`, `POST /admin/playbooks/:id` — Playbook CRUD
-- ❌ `POST /admin/hubs` — хаб жасау (admin)
-- ❌ `POST /admin/routes` — маршрут жасау (admin)
-- ❌ `POST /admin/commission/config` — комиссия конфиг
-- ❌ `POST /admin/jarmenke/events` — жармеңке іс-шара
-- ❌ `POST /admin/access-list` — қара/ақ тізім
-- ❌ `POST /admin/rate-limits` — лимит орнату
-- ❌ `POST /admin/fraud/signals/:id/resolve` — алаяқтық шешу
-- ❌ `GET /admin/exports/stats` — CSV экспорт (тек header)
-- ❌ `GET /admin/exports/commission` — CSV экспорт (тек header)
+### 9.3 Іске асырылған POST (бұрын stub еді):
+- ✅ `POST /admin/orders/:id/force-status` — enum тексерісі + статус өзгерту + AuditLog
+- ✅ `POST /admin/orders/:id/dispute` — OrderDispute жазбасын жасау + AuditLog
+- ✅ `POST /admin/orders/:id/dispute/resolve` — дауды шешу (resolution, closedAt) + AuditLog
+- ✅ `POST /admin/orders/:id/refund-flag` — RefundFlag жазбасын жасау + AuditLog
+- ✅ `POST /admin/delivery/legs/:id/force-complete` — leg COMPLETED + ProofEvent + AuditLog
+- ✅ `POST /admin/delivery/legs/:id/proof` — ProofEvent upsert + AuditLog
+- ✅ `POST /admin/delivery/legs/:id/adjust-geo` — arrivedLat/Lng жаңарту + AuditLog
+- ✅ `POST /admin/slas`, `POST /admin/slas/:id` — DeliverySlaConfig CRUD + AuditLog
+- ✅ `POST /admin/alerts`, `POST /admin/alerts/:id` — AlertConfig CRUD + AuditLog
+- ✅ `POST /admin/playbooks`, `POST /admin/playbooks/:id` — IncidentPlaybook CRUD + AuditLog
+- ✅ `POST /admin/hubs` — Hub жасау (normalizedName) + AuditLog
+- ✅ `POST /admin/routes` — TaxiRoute жасау (ACTIVE) + AuditLog
+- ✅ `POST /admin/commission/config` — CommissionConfig жасау + AuditLog
+- ✅ `POST /admin/jarmenke/events` — JarmenkeEvent жасау + AuditLog
+- ✅ `POST /admin/access-list` / `POST /admin/access-list/:id/remove` — AccessListEntry CRUD + AuditLog
+- ✅ `POST /admin/rate-limits` — RateLimitPolicy жасау + AuditLog
+- ✅ `POST /admin/fraud/signals/:id/resolve` — FraudSignal.status → RESOLVED/DISMISSED + AuditLog
+- ✅ `GET /admin/exports/stats` — нақты CSV (7 күндік chart деректері)
+- ✅ `GET /admin/exports/commission` — нақты CSV (CommissionRecord деректері)
 
-### 9.4 Stub (GET — бос массив қайтарады):
-- ❌ `GET /admin/commission/config` — комиссия конфигтері
-- ❌ `GET /admin/commission/ledger` — комиссия леджер
-- ❌ `GET /admin/commission/anomalies` — аномалиялар
-- ❌ `GET /admin/jarmenke/events` — жармеңке іс-шаралар
-- ❌ `GET /admin/access-list` — қара/ақ тізім
-- ❌ `GET /admin/fraud/signals` — алаяқтық сигналдары
-- ❌ `GET /admin/rate-limits` — лимиттер
-- ❌ `GET /admin/infra/health` — инфрақұрылым денсаулығы (нөлдер)
-- ❌ `GET /admin/infra/orphans` — жетім жазбалар
+### 9.4 Іске асырылған GET (бұрын бос массив еді):
+- ✅ `GET /admin/commission/config` — CommissionConfig кестесінен
+- ✅ `GET /admin/commission/ledger` — CommissionRecord + Order мәліметтері
+- ✅ `GET /admin/commission/anomalies` — rate > 15% болған жазбалар
+- ✅ `GET /admin/jarmenke/events` — JarmenkeEvent кестесінен
+- ✅ `GET /admin/access-list` — AccessListEntry кестесінен
+- ✅ `GET /admin/fraud/signals` — FraudSignal кестесінен (status filter)
+- ✅ `GET /admin/rate-limits` — RateLimitPolicy кестесінен
+- ✅ `GET /admin/infra/health` — нақты hub/route статистикалары + дупликат анықтау
+- ✅ `GET /admin/infra/orphans` — inactive хабтарға байланысқан маршруттар
 
 ---
 
@@ -433,11 +433,11 @@ POST /files/upload
 ## 14. Жетіспейтін тұстар (Summary)
 
 ### Backend:
-1. **Admin стубтары** — 20+ POST endpoint нақты логикасыз
-2. **Admin GET стубтары** — commission, fraud, access-list, infra бос массив
-3. **CSV экспорт** — тек header жібереді
-4. **Payments** — health endpoint stub
-5. **Jest конфиг** — unit тесттер TS parse ете алмайды
+1. ~~**Admin стубтары**~~ ✅ 20+ POST endpoint іске асырылды (AuditLog + нақты DB операциялары)
+2. ~~**Admin GET стубтары**~~ ✅ commission, fraud, access-list, infra нақты деректермен
+3. ~~**CSV экспорт**~~ ✅ нақты деректер CSV-ге
+4. **Payments** — health endpoint stub (Kaspi QR интеграциясы болмағандықтан)
+5. ~~**Jest конфиг**~~ ✅ jest.config.ts қосылды (ts-jest)
 
 ### Frontend:
 1. **Admin Web Dashboard** — `qunarly-admin-web/` бос
