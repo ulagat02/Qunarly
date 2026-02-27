@@ -22,10 +22,13 @@
 - Firewall қосулы болса, **Node/Expo** үшін рұқсат беріңіз:
   - System Settings → Network → Firewall → Options → allow Node/Expo
 
-### API base URL (IP ауысқанда)
+### API base URL (IP ауысқанда / басқа роутер)
 IP hardcode жоқ. Төмендегіні қолдануға болады:
 - `EXPO_PUBLIC_API_BASE_URL` (толық URL)
 - немесе `EXPO_PUBLIC_API_HOST` + `EXPO_PUBLIC_API_PORT`
+
+**Басқа роутермен** (Wi‑Fi) кіргенде: телефон бэкендке жетуі үшін `.env`-та `EXPO_PUBLIC_API_HOST`-ты осы роутердегі **компьютеріңіздің IP** мекенжайына қойыңыз (мысалы `192.168.1.10`). Бэкенд сол желіде `npm run start:dev` іске қосылған болуы керек.
+
 Мысалы `.env`:
 ```
 EXPO_PUBLIC_API_HOST=192.168.0.105

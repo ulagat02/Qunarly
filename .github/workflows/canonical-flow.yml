@@ -1,0 +1,49 @@
+# Canonical full-flow E2E — бір толық сценарий тесті (health check).
+# ARCHITECTURE_CANON: "One full flow is the health check".
+name: Canonical flow E2E
+
+on:
+  pull_request:
+    paths:
+      - 'qunarly-backend/src/**'
+      - 'qunarly-backend/prisma/**'
+      - 'qunarly-backend/test/e2e/**'
+      - '.github/workflows/canonical-flow.yml'
+
+jobs:
+  canonical-e2e:
+    name: Canonical flow
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: qunarly
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=5
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/qunarly
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: qunarly-backend/package-lock.json
+
+      - name: Install deps & migrate
+        run: |
+          cd qunarly-backend && npm ci && npx prisma migrate deploy
+
+      - name: Run canonical flow E2E
+        run: |
+          cd qunarly-backend && npm run test:e2e -- --runInBand --testPathPattern=canonical-flow.e2e-spec.ts

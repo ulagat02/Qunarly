@@ -4,10 +4,10 @@ import { MarketController } from './market.controller';
 import { AuditModule } from '../audit/audit.module';
 import { FilesModule } from '../files/files.module';
 import { NotificationsModule } from '../notifications/notifications.module';
-import { LogisticsModule } from '../logistics/logistics.module';
+import { OrdersModule } from '../orders/orders.module';
 
 @Module({
-  imports: [AuditModule, FilesModule, NotificationsModule, LogisticsModule],
+  imports: [AuditModule, FilesModule, NotificationsModule, OrdersModule],
   providers: [MarketService],
   controllers: [MarketController],
 })

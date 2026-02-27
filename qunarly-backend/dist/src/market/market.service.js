@@ -16,14 +16,14 @@ const audit_service_1 = require("../audit/audit.service");
 const client_1 = require("@prisma/client");
 const files_service_1 = require("../files/files.service");
 const notifications_service_1 = require("../notifications/notifications.service");
-const logistics_service_1 = require("../logistics/logistics.service");
+const orders_service_1 = require("../orders/orders.service");
 let MarketService = class MarketService {
-    constructor(prisma, audit, filesService, notificationsService, logisticsService) {
+    constructor(prisma, audit, filesService, notificationsService, ordersService) {
         this.prisma = prisma;
         this.audit = audit;
         this.filesService = filesService;
         this.notificationsService = notificationsService;
-        this.logisticsService = logisticsService;
+        this.ordersService = ordersService;
     }
     async createListing(sellerId, dto) {
         const remoteUrls = dto.imageUrls?.length ? dto.imageUrls : dto.images;
@@ -381,45 +381,26 @@ let MarketService = class MarketService {
                 status: client_1.DealStatus.NEGOTIATING,
             },
         });
-        const shipment = await this.prisma.shipmentJob.create({
-            data: {
-                requesterId: sellerId,
-                dealId: deal.id,
-                sourceType: 'DEAL',
-                sourceId: deal.id,
-                originLat: seller.homeLat,
-                originLng: seller.homeLng,
-                destLat: buyer.homeLat,
-                destLng: buyer.homeLng,
-                originAddressText: seller.homeAddressText,
-                destAddressText: buyer.homeAddressText,
-                originRegion: seller.homeRegion,
-                destRegion: buyer.homeRegion,
-                cargoWeightKg: offer.quantity,
-                cargoVolumeM3: 1,
-                cargoType: listing.category,
-                packageType: null,
-                cargoNotes: null,
-                cargoJson: {
-                    cargoType: listing.category,
-                    weightKg: offer.quantity,
-                    volumeM3: 1,
-                    pickupAddressText: seller.homeAddressText,
-                    dropoffAddressText: buyer.homeAddressText,
-                },
-                status: client_1.ShipmentJobStatus.CREATED,
-            },
+        const order = await this.ordersService.createOrder(offer.buyerId, {
+            idempotencyKey: `deal-${deal.id}`,
+            listingId: listing.id,
+            quantity: offer.quantity,
+            destinationText: buyer.homeAddressText,
+            destLat: buyer.homeLat,
+            destLng: buyer.homeLng,
         });
-        await this.logisticsService.matchAndOffer(shipment.id);
         await this.audit.log(sellerId, 'market.deal.created', { dealId: deal.id });
-        await this.prisma.dealShipmentLink.create({
-            data: { dealId: deal.id, shipmentId: shipment.id },
-        });
         const carriers = await this.prisma.user.findMany({
             where: { role: 'CARRIER', status: 'ACTIVE' },
             select: { id: true },
         });
-        return deal;
+        await this.notificationsService.createForUsers(carriers.map((user) => user.id), {
+            type: 'MARKET_ORDER_CREATED',
+            title: 'Маркеттен жаңа тапсырыс',
+            body: `${listing.title} бойынша жаңа relay тапсырысы құрылды.`,
+            dataJson: { dealId: deal.id, orderId: order.id, listingId: listing.id },
+        });
+        return { ...deal, orderId: order.id };
     }
     async listDeals(userId) {
         const deals = await this.prisma.deal.findMany({
@@ -515,6 +496,6 @@ exports.MarketService = MarketService = __decorate([
         audit_service_1.AuditService,
         files_service_1.FilesService,
         notifications_service_1.NotificationsService,
-        logistics_service_1.LogisticsService])
+        orders_service_1.OrdersService])
 ], MarketService);
 //# sourceMappingURL=market.service.js.map

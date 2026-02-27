@@ -22,9 +22,9 @@ export declare class MarketController {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: import("@prisma/client/runtime/library").JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -32,14 +32,11 @@ export declare class MarketController {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -50,11 +47,14 @@ export declare class MarketController {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     listListings(search?: string, category?: string, regionId?: string, districtId?: string, minPrice?: string, maxPrice?: string, sort?: 'latest' | 'price_asc' | 'price_desc'): Promise<{
         regionId: string | null;
@@ -70,9 +70,9 @@ export declare class MarketController {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: import("@prisma/client/runtime/library").JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -80,14 +80,11 @@ export declare class MarketController {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -98,11 +95,14 @@ export declare class MarketController {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }[]>;
     getListing(id: string): Promise<{
         regionId: string | null;
@@ -118,9 +118,9 @@ export declare class MarketController {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: import("@prisma/client/runtime/library").JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -128,14 +128,11 @@ export declare class MarketController {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -146,11 +143,14 @@ export declare class MarketController {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     previewListing(id: string, qty?: string): Promise<{
         listingId: string;
@@ -173,9 +173,9 @@ export declare class MarketController {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: import("@prisma/client/runtime/library").JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -183,14 +183,11 @@ export declare class MarketController {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -201,11 +198,14 @@ export declare class MarketController {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     uploadImages(listingId: string, req: Request): Promise<{
         regionId: string | null;
@@ -221,9 +221,9 @@ export declare class MarketController {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: import("@prisma/client/runtime/library").JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -231,14 +231,11 @@ export declare class MarketController {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -249,34 +246,38 @@ export declare class MarketController {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     createOffer(listingId: string, req: Request, dto: CreateOfferDto): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     acceptOffer(offerId: string, req: Request): Promise<{
+        orderId: string;
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -288,33 +289,33 @@ export declare class MarketController {
     }>;
     counterOffer(offerId: string, req: Request, dto: CounterOfferDto): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     rejectOffer(offerId: string, req: Request): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     listListingOffers(listingId: string, req: Request): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }[]>;
     listDeals(req: Request): Promise<{
         offer: {
@@ -323,11 +324,6 @@ export declare class MarketController {
         };
         listing: {
             id: string;
-            regionId: string | null;
-            createdAt: Date;
-            districtId: string | null;
-            status: import(".prisma/client").$Enums.ProductListingStatus;
-            sellerId: string;
             category: string;
             title: string;
             description: string | null;
@@ -336,25 +332,30 @@ export declare class MarketController {
             priceType: string | null;
             priceMin: number | null;
             priceMax: number | null;
+            regionId: string | null;
             lat: number | null;
             lng: number | null;
+            status: import(".prisma/client").$Enums.ProductListingStatus;
+            createdAt: Date;
             addressText: string | null;
             currency: string;
             price: number;
+            districtId: string | null;
             customCategoryName: string | null;
             reservedQty: number;
+            sellerId: string;
         };
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -371,11 +372,6 @@ export declare class MarketController {
         };
         listing: {
             id: string;
-            regionId: string | null;
-            createdAt: Date;
-            districtId: string | null;
-            status: import(".prisma/client").$Enums.ProductListingStatus;
-            sellerId: string;
             category: string;
             title: string;
             description: string | null;
@@ -384,25 +380,30 @@ export declare class MarketController {
             priceType: string | null;
             priceMin: number | null;
             priceMax: number | null;
+            regionId: string | null;
             lat: number | null;
             lng: number | null;
+            status: import(".prisma/client").$Enums.ProductListingStatus;
+            createdAt: Date;
             addressText: string | null;
             currency: string;
             price: number;
+            districtId: string | null;
             customCategoryName: string | null;
             reservedQty: number;
+            sellerId: string;
         };
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -414,16 +415,16 @@ export declare class MarketController {
     }>;
     confirmDeal(id: string, req: Request): Promise<{
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;

@@ -5,10 +5,10 @@ import { CreateListingDto } from './dto/create-listing.dto';
 import { UpdateListingDto } from './dto/update-listing.dto';
 import { CreateOfferDto } from './dto/create-offer.dto';
 import { CounterOfferDto } from './dto/counter-offer.dto';
-import { DealStatus, OfferStatus, ProductListingStatus, FileEntityType, Prisma, ShipmentJobStatus } from '@prisma/client';
+import { DealStatus, OfferStatus, ProductListingStatus, FileEntityType, Prisma } from '@prisma/client';
 import { FilesService } from '../files/files.service';
 import { NotificationsService } from '../notifications/notifications.service';
-import { LogisticsService } from '../logistics/logistics.service';
+import { OrdersService } from '../orders/orders.service';
 import { PriceTierDto } from './dto/price-tier.dto';
 
 @Injectable()
@@ -18,7 +18,7 @@ export class MarketService {
     private audit: AuditService,
     private filesService: FilesService,
     private notificationsService: NotificationsService,
-    private logisticsService: LogisticsService,
+    private ordersService: OrdersService,
   ) {}
 
   async createListing(sellerId: string, dto: CreateListingDto) {
@@ -421,45 +421,30 @@ export class MarketService {
         status: DealStatus.NEGOTIATING,
       },
     });
-    const shipment = await this.prisma.shipmentJob.create({
-      data: {
-        requesterId: sellerId,
-        dealId: deal.id,
-        sourceType: 'DEAL',
-        sourceId: deal.id,
-        originLat: seller.homeLat,
-        originLng: seller.homeLng,
-        destLat: buyer.homeLat,
-        destLng: buyer.homeLng,
-        originAddressText: seller.homeAddressText,
-        destAddressText: buyer.homeAddressText,
-        originRegion: seller.homeRegion,
-        destRegion: buyer.homeRegion,
-        cargoWeightKg: offer.quantity,
-        cargoVolumeM3: 1,
-        cargoType: listing.category,
-        packageType: null,
-        cargoNotes: null,
-        cargoJson: {
-          cargoType: listing.category,
-          weightKg: offer.quantity,
-          volumeM3: 1,
-          pickupAddressText: seller.homeAddressText,
-          dropoffAddressText: buyer.homeAddressText,
-        } as Prisma.InputJsonValue,
-        status: ShipmentJobStatus.CREATED,
-      },
+    // Canonical flow: accepted offer → order + delivery legs (no separate ShipmentJob).
+    const order = await this.ordersService.createOrder(offer.buyerId, {
+      idempotencyKey: `deal-${deal.id}`,
+      listingId: listing.id,
+      quantity: offer.quantity,
+      destinationText: buyer.homeAddressText,
+      destLat: buyer.homeLat,
+      destLng: buyer.homeLng,
     });
-    await this.logisticsService.matchAndOffer(shipment.id);
     await this.audit.log(sellerId, 'market.deal.created', { dealId: deal.id });
-    await this.prisma.dealShipmentLink.create({
-      data: { dealId: deal.id, shipmentId: shipment.id },
-    });
     const carriers = await this.prisma.user.findMany({
       where: { role: 'CARRIER', status: 'ACTIVE' },
       select: { id: true },
     });
-    return deal;
+    await this.notificationsService.createForUsers(
+      carriers.map((user) => user.id),
+      {
+        type: 'MARKET_ORDER_CREATED',
+        title: 'Маркеттен жаңа тапсырыс',
+        body: `${listing.title} бойынша жаңа relay тапсырысы құрылды.`,
+        dataJson: { dealId: deal.id, orderId: order.id, listingId: listing.id },
+      },
+    );
+    return { ...deal, orderId: order.id };
   }
 
   async listDeals(userId: string) {

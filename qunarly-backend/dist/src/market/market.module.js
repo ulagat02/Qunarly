@@ -13,13 +13,13 @@ const market_controller_1 = require("./market.controller");
 const audit_module_1 = require("../audit/audit.module");
 const files_module_1 = require("../files/files.module");
 const notifications_module_1 = require("../notifications/notifications.module");
-const logistics_module_1 = require("../logistics/logistics.module");
+const orders_module_1 = require("../orders/orders.module");
 let MarketModule = class MarketModule {
 };
 exports.MarketModule = MarketModule;
 exports.MarketModule = MarketModule = __decorate([
     (0, common_1.Module)({
-        imports: [audit_module_1.AuditModule, files_module_1.FilesModule, notifications_module_1.NotificationsModule, logistics_module_1.LogisticsModule],
+        imports: [audit_module_1.AuditModule, files_module_1.FilesModule, notifications_module_1.NotificationsModule, orders_module_1.OrdersModule],
         providers: [market_service_1.MarketService],
         controllers: [market_controller_1.MarketController],
     })

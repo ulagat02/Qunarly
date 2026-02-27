@@ -7,14 +7,14 @@ import { CounterOfferDto } from './dto/counter-offer.dto';
 import { Prisma } from '@prisma/client';
 import { FilesService } from '../files/files.service';
 import { NotificationsService } from '../notifications/notifications.service';
-import { LogisticsService } from '../logistics/logistics.service';
+import { OrdersService } from '../orders/orders.service';
 export declare class MarketService {
     private prisma;
     private audit;
     private filesService;
     private notificationsService;
-    private logisticsService;
-    constructor(prisma: PrismaService, audit: AuditService, filesService: FilesService, notificationsService: NotificationsService, logisticsService: LogisticsService);
+    private ordersService;
+    constructor(prisma: PrismaService, audit: AuditService, filesService: FilesService, notificationsService: NotificationsService, ordersService: OrdersService);
     createListing(sellerId: string, dto: CreateListingDto): Promise<{
         regionId: string | null;
         districtId: string | null;
@@ -29,9 +29,9 @@ export declare class MarketService {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: Prisma.JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -39,14 +39,11 @@ export declare class MarketService {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -57,11 +54,14 @@ export declare class MarketService {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     listListings(filters: {
         search?: string;
@@ -85,9 +85,9 @@ export declare class MarketService {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: Prisma.JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -95,14 +95,11 @@ export declare class MarketService {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -113,11 +110,14 @@ export declare class MarketService {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }[]>;
     getListing(id: string): Promise<{
         regionId: string | null;
@@ -133,9 +133,9 @@ export declare class MarketService {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: Prisma.JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -143,14 +143,11 @@ export declare class MarketService {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -161,11 +158,14 @@ export declare class MarketService {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     updateListing(id: string, sellerId: string, dto: UpdateListingDto): Promise<{
         regionId: string | null;
@@ -181,9 +181,9 @@ export declare class MarketService {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: Prisma.JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -191,14 +191,11 @@ export declare class MarketService {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -209,11 +206,14 @@ export declare class MarketService {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     previewListingPrice(listingId: string, qty: number): Promise<{
         listingId: string;
@@ -224,48 +224,49 @@ export declare class MarketService {
     }>;
     createOffer(listingId: string, buyerId: string, dto: CreateOfferDto): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     counterOffer(offerId: string, sellerId: string, dto: CounterOfferDto): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     rejectOffer(offerId: string, sellerId: string): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }>;
     private normalizeTiers;
     private selectTier;
     acceptOffer(offerId: string, sellerId: string): Promise<{
+        orderId: string;
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -282,11 +283,6 @@ export declare class MarketService {
         };
         listing: {
             id: string;
-            regionId: string | null;
-            createdAt: Date;
-            districtId: string | null;
-            status: import(".prisma/client").$Enums.ProductListingStatus;
-            sellerId: string;
             category: string;
             title: string;
             description: string | null;
@@ -295,25 +291,30 @@ export declare class MarketService {
             priceType: string | null;
             priceMin: number | null;
             priceMax: number | null;
+            regionId: string | null;
             lat: number | null;
             lng: number | null;
+            status: import(".prisma/client").$Enums.ProductListingStatus;
+            createdAt: Date;
             addressText: string | null;
             currency: string;
             price: number;
+            districtId: string | null;
             customCategoryName: string | null;
             reservedQty: number;
+            sellerId: string;
         };
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -330,11 +331,6 @@ export declare class MarketService {
         };
         listing: {
             id: string;
-            regionId: string | null;
-            createdAt: Date;
-            districtId: string | null;
-            status: import(".prisma/client").$Enums.ProductListingStatus;
-            sellerId: string;
             category: string;
             title: string;
             description: string | null;
@@ -343,25 +339,30 @@ export declare class MarketService {
             priceType: string | null;
             priceMin: number | null;
             priceMax: number | null;
+            regionId: string | null;
             lat: number | null;
             lng: number | null;
+            status: import(".prisma/client").$Enums.ProductListingStatus;
+            createdAt: Date;
             addressText: string | null;
             currency: string;
             price: number;
+            districtId: string | null;
             customCategoryName: string | null;
             reservedQty: number;
+            sellerId: string;
         };
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -373,16 +374,16 @@ export declare class MarketService {
     }>;
     confirmDeal(id: string, userId: string): Promise<{
         id: string;
-        createdAt: Date;
         status: import(".prisma/client").$Enums.DealStatus;
+        createdAt: Date;
         sellerId: string;
         listingId: string;
         buyerId: string;
+        agreedQuantity: number;
+        agreedUnitPrice: number;
         cargoWeightKg: number | null;
         cargoVolumeM3: number | null;
         cargoType: string | null;
-        agreedQuantity: number;
-        agreedUnitPrice: number;
         pickupLat: number | null;
         pickupLng: number | null;
         pickupAddressText: string | null;
@@ -397,13 +398,13 @@ export declare class MarketService {
     }>;
     listListingOffers(listingId: string, sellerId: string): Promise<{
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.OfferStatus;
         quantity: number;
+        status: import(".prisma/client").$Enums.OfferStatus;
+        createdAt: Date;
         listingId: string;
-        buyerId: string;
         unitPrice: number;
         message: string | null;
+        buyerId: string;
     }[]>;
     uploadListingImages(listingId: string, sellerId: string, files: Express.Multer.File[], baseUrl?: string): Promise<{
         regionId: string | null;
@@ -419,9 +420,9 @@ export declare class MarketService {
             file: {
                 id: string;
                 createdAt: Date;
-                url: string;
                 ownerId: string;
                 type: string;
+                url: string;
                 metaJson: Prisma.JsonValue | null;
                 entityId: string | null;
                 entityType: import(".prisma/client").$Enums.FileEntityType | null;
@@ -429,14 +430,11 @@ export declare class MarketService {
         } & {
             id: string;
             createdAt: Date;
-            sortOrder: number;
             listingId: string;
             fileId: string;
+            sortOrder: number;
         })[];
         id: string;
-        createdAt: Date;
-        status: import(".prisma/client").$Enums.ProductListingStatus;
-        sellerId: string;
         category: string;
         title: string;
         description: string | null;
@@ -447,11 +445,14 @@ export declare class MarketService {
         priceMax: number | null;
         lat: number | null;
         lng: number | null;
+        status: import(".prisma/client").$Enums.ProductListingStatus;
+        createdAt: Date;
         addressText: string | null;
         currency: string;
         price: number;
         customCategoryName: string | null;
         reservedQty: number;
+        sellerId: string;
     }>;
     private attachListingImages;
 }

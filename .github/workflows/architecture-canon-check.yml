@@ -1,0 +1,36 @@
+name: Architecture Canon Check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  canon:
+    name: Canon updated when core changes
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enforce ARCHITECTURE_CANON.md update
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          CHANGED="$(git diff --name-only "$BASE_SHA" "$HEAD_SHA")"
+          echo "$CHANGED"
+
+          NEED_CANON="$(echo "$CHANGED" | grep -E '^(qunarly-backend/prisma/schema\.prisma|qunarly-backend/src/|qunarly-mobile/|qunarly-admin-web/)' || true)"
+          CANON_CHANGED="$(echo "$CHANGED" | grep -E '^docs/ARCHITECTURE_CANON\.md$' || true)"
+
+          if [ -n "$NEED_CANON" ] && [ -z "$CANON_CHANGED" ]; then
+            echo "::error::BLOCK: Core paths changed but docs/ARCHITECTURE_CANON.md not updated."
+            echo "::error::Changed core files:"
+            echo "$NEED_CANON"
+            exit 1
+          fi
+
